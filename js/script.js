@@ -1,8 +1,78 @@
 $(document).ready(function () {
     
-    // $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/contacts", function( data ) {
-    //     console.log(data)
-    // });
+    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/testimonials", function( data ) {
+        for (let i = 0; i < data.data.testimonials.length; i++) {
+            $('.reviews-carousel').append(`
+            <div class="reviews-carousel__item">
+                <div class="review">
+                    «${data.data.testimonials[i].body}»
+                </div>
+                <h2 class="review-author">
+                    ${data.data.testimonials[i].name} <span>//</span>
+                </h2>
+            </div>
+            `);
+        }
+
+        //reviews carousel
+        var reviewSlidesCount = $('.reviews-carousel__item').length;
+
+        $('#items-review').text('/0' + reviewSlidesCount);
+        updateCurrentSlideNumber('item-review', 1);
+
+        $('.reviews-carousel').owlCarousel({
+            nav: false,
+            dots: false,
+            arrows: false,
+            responsiveClass:false,
+            margin: 50,
+            items: 1,
+            animateOut: 'slideOutUp',
+            animateIn: 'slideInUp',
+
+            onChanged: (event) => {
+                updateCurrentSlideNumber('item-review', event.item.index + 1);
+            }
+        });
+
+        $('#next-slide-review').on('click', function(){
+            $('.reviews-carousel').trigger('next.owl.carousel');
+        });
+
+        $('#prev-slide-review').on('click', function(){
+            $('.reviews-carousel').trigger('prev.owl.carousel');
+        });
+
+    });
+
+    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/albums", function( data ) {
+        for (let i = 0; i < data.data.albums.length; i++){
+            $('#gallery-4').append(`
+             <div class="gallery-carousel__item">
+                <div class="number-carousel-box">
+                    <div class="number-slide gallery-item-number"></div>
+                    <div class="current-items gallery-length-4"></div>
+                </div>
+                <div class="gallery-carousel-img">
+                    <img src="img/gallery.jpg" alt="">
+                </div>
+                <div class="gallery-item__info">
+                    <p class="class">4 класс</p>
+                    <p class="book-type">
+                        Книга: <span>Премиум</span>
+                    </p>
+                </div>
+                <a href="#" class="gallery-btn">
+                    Смотреть все фото
+                    <img src="img/link-arrow.png" alt="">
+                </a>
+             
+             
+             </div>             
+            `)
+        }
+
+    });
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 10){
@@ -48,35 +118,6 @@ $(document).ready(function () {
         onChanged: (event) => {
             updateCurrentSlideNumber('item-portfolio', event.item.index + 1);
         }
-    });
-
-    //reviews carousel
-    var reviewSlidesCount = $('.reviews-carousel__item').length;
-
-    $('#items-review').text('/0' + reviewSlidesCount);
-    updateCurrentSlideNumber('item-review', 1);
-
-    $('.reviews-carousel').owlCarousel({
-        nav: false,
-        dots: false,
-        arrows: false,
-        responsiveClass:false,
-        margin: 50,
-        items: 1,
-        animateOut: 'slideOutUp',
-        animateIn: 'slideInUp',
-
-        onChanged: (event) => {
-            updateCurrentSlideNumber('item-review', event.item.index + 1);
-        }
-    });
-
-    $('#next-slide-review').on('click', function(){
-        $('.reviews-carousel').trigger('next.owl.carousel');
-    });
-
-    $('#prev-slide-review').on('click', function(){
-        $('.reviews-carousel').trigger('prev.owl.carousel');
     });
 
     //gallery-carousel-4
