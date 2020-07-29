@@ -112,6 +112,8 @@ ul {
 
 .sale-info-box {
   width: 100%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .sale-info-box .container {
     display: -webkit-box;
@@ -195,6 +197,8 @@ header {
   border-bottom: 1px solid #2B2B2B;
   margin-bottom: 5px;
   background-color: #f4f2ef;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 40; }
   header .header-content {
@@ -216,6 +220,8 @@ header {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -494,12 +500,20 @@ header {
       width: 100%;
       max-width: 350px;
       overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       cursor: pointer; }
       .packages .packages-item .package-img img {
         width: 100%;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
     .packages .packages-item .package-name {
       font-family: 'HMAmperserifText', serif;
@@ -511,6 +525,8 @@ header {
     .packages .packages-item .button-box {
       margin: 50px 0; }
     .packages .packages-item:hover .package-img img {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
       transform: scale(1.1); }
 
 p.cost {
@@ -763,15 +779,26 @@ p.cost {
     width: 100%;
     height: auto;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     cursor: pointer; }
     .gallery-carousel__item .gallery-carousel-img img {
       width: 100%;
+      -o-object-fit: cover;
       object-fit: cover;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
       transition: all 0.5s ease; }
   .gallery-carousel__item:hover .gallery-carousel-img img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1); }
 
 .gallery-btn {
@@ -987,14 +1014,24 @@ footer {
       position: absolute;
       top: 50%;
       left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       width: 70px;
       height: 70px;
       background-color: #ffffff99;
       opacity: 0;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
       transition: all 0.5s ease; }
     .instagram-gallery a:hover:after {
       opacity: 1; }
@@ -1168,6 +1205,8 @@ footer {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
     min-height: calc(100vh - 130px);
     border-left: 1px solid #2B2B2B; }
@@ -1321,8 +1360,15 @@ footer {
 .gallery-page {
   width: 100%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 80px 0; }
   .gallery-page .category, .gallery-page .name {
@@ -1331,8 +1377,15 @@ footer {
     line-height: 1;
     margin-bottom: 30px; }
   .gallery-page .photo-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100%;
     margin-top: 60px; }
@@ -1968,6 +2021,8 @@ footer {
     padding: 40px;
     min-height: 380px; } }
 .owl-stage {
+  -webkit-transition: all 1s ease 0s !important;
+  -o-transition: all 1s ease 0s !important;
   transition: all 1s ease 0s !important; }
 
 /*# sourceMappingURL=style.css.map */
