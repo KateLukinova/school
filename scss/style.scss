@@ -120,7 +120,7 @@ h2 {
   text-transform: uppercase;
   font-size: 12px;
   color: #333333;
-  font-weight: bold;
+  font-weight: normal;
   margin: 30px 0;
   margin-top: 50px;
 }
@@ -145,7 +145,7 @@ ul {
 
 .sale-info-box {
   width: 100%;
-  border-bottom: 1px solid #2B2B2B;
+  transition: all 0.5s ease;
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -189,7 +189,7 @@ ul {
       }
     }
     span {
-      margin-left: 6%;
+      text-align: center;
     }
   }
 }
@@ -219,6 +219,9 @@ ul {
 }
 
 header {
+  position: fixed;
+  top: 40px;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,6 +235,9 @@ header {
   height: 80px;
   border-bottom: 1px solid #2B2B2B;
   margin-bottom: 5px;
+  background-color: #f4f2ef;
+  transition: all 0.3s ease;
+  z-index: 40;
   .header-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -250,6 +256,10 @@ header {
 }
 
 .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,6 +324,10 @@ header {
   border-top: 1px solid #2B2B2B;
   border-bottom: 1px solid #2B2B2B;
   margin-bottom: 5px;
+}
+
+.top-section {
+  margin-top: 87px;
 }
 
 .main-screen {
@@ -558,8 +572,14 @@ header {
     .package-img {
       width: 100%;
       max-width: 350px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
       img {
         width: 100%;
+        transition: all 0.5s ease;
       }
     }
     .package-name {
@@ -573,6 +593,13 @@ header {
     }
     .button-box {
       margin: 50px 0;
+    }
+    &:hover {
+      .package-img {
+        img {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 }
@@ -824,7 +851,7 @@ p.cost {
   }
   h2 {
     position: absolute;
-    top: 112px;
+    top: 14px;
     left: 0;
   }
   .number-carousel-box {
@@ -863,6 +890,27 @@ p.cost {
     margin-top: 35px;
     p {
       margin-bottom: 12px;
+    }
+  }
+  .gallery-carousel-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+  }
+  &:hover {
+    .gallery-carousel-img {
+      img {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -1031,6 +1079,9 @@ footer {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  a {
+    font-size: 12px;
+  }
 }
 
 .footer-info {
@@ -1051,6 +1102,7 @@ footer {
   flex-direction: column;
   a {
     text-align: center;
+    font-size: 12px;
   }
 }
 
@@ -1090,8 +1142,27 @@ footer {
   }
   a {
     margin-right: 30px;
+    position: relative;
     &:nth-last-child(1) {
       margin-right: 0;
+    }
+    &:after {
+      content: url("../img/instagram-icon.png");
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      background-color: #ffffff99;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    &:hover:after {
+      opacity: 1;
     }
   }
 }
@@ -1179,6 +1250,10 @@ footer {
   img {
     margin-left: 12px;
     margin-bottom: 3px;
+  }
+  a {
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 12px;
   }
 }
 
@@ -1282,9 +1357,7 @@ footer {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    align-items: flex-end;
     min-height: calc(100vh - 130px);
     border-left: 1px solid #2B2B2B;
     form {
@@ -1310,6 +1383,10 @@ footer {
         outline: none;
         border-bottom: 1px solid #cccccc;
         padding: 8px 0;
+        background-color: transparent;
+        font-family: 'Merriweather-Regular', sans-serif;
+        font-size: 12px;
+        color: #333333;
         &::-webkit-input-placeholder {
           font-family: 'Merriweather-Regular', sans-serif;
           font-size: 12px;
@@ -1352,7 +1429,9 @@ footer {
         padding: 12px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
+        font-size: 12px;
         color: #333333;
+        background-color: transparent;
         font-family: 'Merriweather-Regular', sans-serif;
         &::-webkit-input-placeholder {
           font-family: 'Merriweather-Regular', sans-serif;
@@ -1604,6 +1683,7 @@ footer {
       height: 515px;
     }
   }
+
   .sale-info-box .container span {
     margin-left: 0;
   }
@@ -1768,6 +1848,10 @@ footer {
     .review-form {
       width: 55%;
     }
+  }
+
+  .top-section {
+    margin-top: 80px;
   }
 }
 
@@ -2280,3 +2364,8 @@ footer {
     min-height: 380px;
   }
 }
+
+.owl-stage {
+  transition: all 1s ease 0s!important;
+}
+

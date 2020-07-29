@@ -5,9 +5,12 @@ $(document).ready(function () {
     // });
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 150){
+        if ($(this).scrollTop() > 10){
             $('.sale-info-box').css('transform', 'translateY(-100%)');
             $('header').css('top', '0')
+        } else {
+            $('.sale-info-box').css('transform', 'translateY(0)');
+            $('header').css('top', '40px')
         }
     }).trigger('scroll');
 
