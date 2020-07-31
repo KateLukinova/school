@@ -26,10 +26,10 @@
                         <a href="tel:+79787488852">+7 (978) 74 888 52</a>
                         <a href="#">Крым, Севастополь</a>
                     </div>
-                    <div class="logo">
+                    <a href="index.html" class="logo">
                         <div class="name">Nina Budai </div>
                         <div class="position">photographer</div>
-                    </div>
+                    </a>
                     <div class="soc-box">
                         <a href="#">
                             <img src="img/insta.png" alt="">
@@ -48,8 +48,8 @@
             </div>
         </header>
 
-        <section class="border-section top-section">
-            <div class="container">
+        <section class="border-section top-section relative-section">
+            <div class="container" id="review-form-block">
                 <div class="review-page">
                     <div class="text-block">
                         <h2>Отзывы //</h2>
@@ -65,17 +65,17 @@
                         <a href="#">Viber</a>
                     </div>
                     <div class="review-form">
-                        <form method="post" action="#" class="contact-form">
+                        <form method="post" action="#" class="contact-form" id="review-form">
                             <div class="form-header text-center">
                                 <div class="caption">Нам важен ваш отзыв!</div>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="Ваше имя">
+                                <input type="text" placeholder="Ваше имя" id="form-name">
                             </div>
 
                             <div class="form-group">
-                                <input type="tel" placeholder="Номер телефона" pattern="[0-9\-]*">
+                                <input type="tel" placeholder="Номер телефона" pattern="[0-9\-]*" id="form-phone">
                             </div>
 
                             <div class="form-group">

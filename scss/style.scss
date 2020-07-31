@@ -100,9 +100,12 @@ body {
 a {
   text-decoration: none;
   color: #333333;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   &:hover {
     text-decoration: none;
-    color: #333333;
+    color: #999999;
   }
 }
 
@@ -123,6 +126,7 @@ h2 {
   font-weight: normal;
   margin: 30px 0;
   margin-top: 50px;
+  letter-spacing: 0.1em;
 }
 
 h3 {
@@ -236,6 +240,7 @@ header {
   width: 100%;
   height: 80px;
   border-bottom: 1px solid #2B2B2B;
+  border-top: 1px solid #2B2B2B;
   margin-bottom: 5px;
   background-color: #f4f2ef;
   -webkit-transition: all 0.3s ease;
@@ -319,6 +324,9 @@ header {
     -ms-flex-align: center;
     align-items: center;
     margin-left: 28px;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -443,6 +451,13 @@ header {
     letter-spacing: 0.6px;
     color: #FFFFFF;
   }
+
+  .owl-stage {
+    -webkit-transition: all 1s ease 0s!important;
+    -o-transition: all 1s ease 0s!important;
+    transition: all 1s ease 0s!important;
+  }
+
 }
 
 .link {
@@ -462,6 +477,12 @@ header {
   }
   h2 {
     margin: 0;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    &:hover {
+      color: #999999;
+    }
   }
   span {
     font-family: 'HMAmperserifText-BoldItalic', serif;
@@ -510,6 +531,12 @@ header {
     -ms-flex-align: center;
     align-items: center;
     overflow: hidden;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity: 0.6;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -665,6 +692,7 @@ p.cost {
   font-family: 'HelveticaNeueCyr-Medium', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
+  cursor: pointer;
   span {
     &:before {
       content: 'развернуть';
@@ -867,7 +895,7 @@ p.cost {
   }
   h2 {
     position: absolute;
-    top: 14px;
+    top: 68px;
     left: 0;
   }
   .number-carousel-box {
@@ -885,9 +913,18 @@ p.cost {
     width: max-content;
     margin: 0 65px;
   }
+
+
+  .owl-stage {
+    -webkit-transition: all 1s ease 0s!important;
+    -o-transition: all 1s ease 0s!important;
+    transition: all 1s ease 0s!important;
+  }
+
 }
 
 .my-controls-btns.transform {
+  cursor: pointer;
   img {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -950,9 +987,9 @@ p.cost {
   -ms-flex-align: center;
   align-items: center;
   font-family: "HelveticaNeueCyr-Medium", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.1;
   img {
     width: 14px!important;
     margin-left: 20px;
@@ -1026,7 +1063,7 @@ p.cost {
   cursor: pointer;
 }
 .tabs__caption .active {
-  color: #000;
+  color: #999999;
 }
 
 .tabs__content {
@@ -1092,7 +1129,7 @@ footer {
 }
 
 .footer-nav {
-  width: 25%;
+  width: 21%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1501,23 +1538,41 @@ footer {
       font-family: 'HelveticaNeueCyr-Medium', sans-serif;
       background-color: transparent;
       color: #999999;
+      cursor: pointer;
+      &:hover {
+        color: #333333;
+      }
     }
   }
 }
 
+.relative-section {
+  position: relative;
+}
+
 .modal-ok {
-  display: none;
+  position: absolute;
+  z-index: -40;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: auto;
   height: auto;
   min-height: calc(100vh - 130px);
-  background-color: white;
+  background-color: #f4f2ef;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   .content {
     width: 100%;
     max-width: 500px;
@@ -1549,6 +1604,11 @@ footer {
       max-width: 280px;
       text-align: center;
     }
+  }
+  &.show {
+    position: static;
+    z-index: 40;
+    opacity: 1;
   }
 }
 
@@ -2416,10 +2476,4 @@ footer {
     padding: 40px;
     min-height: 380px;
   }
-}
-
-.owl-stage {
-  -webkit-transition: all 1s ease 0s!important;
-  -o-transition: all 1s ease 0s!important;
-  transition: all 1s ease 0s!important;
 }
