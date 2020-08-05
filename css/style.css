@@ -255,6 +255,20 @@ header {
     color: #333333;
     line-height: 1; }
 
+.my-controls-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer; }
+  .my-controls-btns img {
+    width: 16px; }
+
 .soc-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -342,6 +356,8 @@ header {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
+      .cases .owl-nav button img {
+        width: 24px; }
     .cases .owl-nav button:focus, .cases .owl-nav button:hover {
       outline: none;
       -webkit-box-shadow: none;
@@ -406,7 +422,9 @@ header {
     -ms-flex-item-align: end;
     align-self: flex-end; }
   .link img {
-    margin-left: 20px; }
+    margin-left: 20px;
+    margin-bottom: 2px;
+    width: 16px; }
   .link h2 {
     margin: 0;
     -webkit-transition: all 0.5s ease;
@@ -416,7 +434,8 @@ header {
       color: #999999; }
   .link span {
     font-family: 'HMAmperserifText-BoldItalic', serif;
-    font-size: 14px; }
+    font-size: 14px;
+    padding-bottom: 3px; }
 
 .right-column {
   width: 35%;
@@ -1188,7 +1207,7 @@ footer {
   align-items: center;
   width: 100%;
   height: auto;
-  min-height: calc(100vh - 130px);
+  min-height: 768px;
   position: relative; }
   .review-page .text-block {
     display: -webkit-box;
@@ -1236,7 +1255,7 @@ footer {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end;
-    min-height: calc(100vh - 130px);
+    min-height: 768px;
     border-left: 1px solid #2B2B2B; }
     .review-page .review-form form {
       width: 100%;
@@ -1688,6 +1707,10 @@ footer {
       width: 130px;
       bottom: 15px;
       right: 0; }
+    .cases .owl-prev {
+      -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg); }
 
   .carousel-box .number-carousel-box {
     bottom: 105px;
@@ -1828,6 +1851,7 @@ footer {
   .gallery-nav-box {
     bottom: 50px;
     left: 50%;
+    z-index: 10;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
@@ -1906,19 +1930,19 @@ footer {
     margin-left: 5px; }
 
   .contacts-box {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
+    font-size: 11px; }
     .contacts-box a {
-      margin-right: 0;
-      margin-bottom: 5px; }
+      margin-right: 20px;
+      white-space: nowrap; }
+
+  .logo-mobile .name {
+    font-size: 16px; }
 
   header .header-content, .logo-mobile {
-    height: 50px; }
+    height: 40px; }
 
   .h1-mobile {
-    font-size: 24px;
+    font-size: 23px;
     top: 50px; }
 
   .case-cover {
@@ -1931,22 +1955,52 @@ footer {
   .p-mobile {
     margin-top: 35px; }
 
+  .cases .owl-nav button img {
+    width: 14px; }
+
+  .cases {
+    padding-bottom: 40px; }
+
+  .cases .owl-nav {
+    bottom: 5px; }
+
+  .carousel-box .number-carousel-box {
+    bottom: 65px; }
+
   p, h2, .link span {
-    font-size: 14px; }
+    font-size: 13px; }
 
   h2 {
-    margin: 15px 0; }
+    margin: 35px 0;
+    font-size: 11px; }
 
   .inst-block {
     padding-top: 35px; }
     .inst-block .inst-img {
-      height: 320px; }
+      height: 250px;
+      width: 80%; }
+    .inst-block .button-box {
+      width: 80%; }
+
+  .link img {
+    margin-left: 12px;
+    margin-bottom: 1px;
+    width: 14px; }
 
   .packages .packages-item ul {
     font-size: 14px; }
 
+  .packages .packages-item .package-name {
+    font-size: 30px; }
+
+  h3 {
+    font-size: 13px;
+    margin-top: 20px; }
+
   .collapse-btn {
-    font-size: 12px; }
+    font-size: 11px;
+    width: 160px;
+    height: 40px; }
 
   .gallery-link {
     font-size: 12px; }
@@ -1959,7 +2013,7 @@ footer {
     font-size: 14px; }
 
   .quote {
-    font-size: 28px; }
+    font-size: 30px; }
 
   .reviews-block .main-review {
     padding-top: 0;
@@ -1972,20 +2026,28 @@ footer {
     margin: 60px 0; }
 
   .reviews-slide-block .reviews-carousel .review {
-    font-size: 16px; }
+    font-size: 13px; }
 
   .number-slide, .current-items {
-    font-size: 16px; }
+    font-size: 12px; }
 
   .reviews-nav-box .number-carousel-box {
     margin: 0 40px; }
+
+  .review-photo-mobile {
+    width: 90%;
+    margin: auto; }
 
   .my-controls-btns {
     margin-top: 0; }
 
   .big-btn {
-    font-size: 16px;
-    height: 60px; }
+    font-size: 12px;
+    height: 40px;
+    max-width: 290px; }
+
+  .center-block {
+    padding: 70px 0; }
 
   .vertical .tabs__caption li {
     font-size: 20px; }
@@ -1993,27 +2055,30 @@ footer {
   .gallery-block {
     padding-bottom: 0; }
 
-  .footer-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-
   .footer-nav, .footer-info {
-    width: 100%;
+    width: 50%;
     padding: 20px 0;
-    border: none; }
+    border: none;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content; }
     .footer-nav a, .footer-info a {
-      text-align: center; }
+      text-align: center;
+      font-size: 10px; }
+
+  .instagram-gallery.mobile {
+    padding: 0; }
 
   .footer-nav {
-    border-bottom: 1px solid #2B2B2B; }
+    border-right: 1px solid #2B2B2B; }
+
+  .footer-bottom {
+    padding: 10px 0;
+    font-size: 9px; }
 
   footer {
-    padding: 20px 0; }
+    padding: 20px 0;
+    padding-bottom: 5px; }
 
   .instagram-gallery-caption-mobile {
     margin-bottom: 30px; }
@@ -2021,52 +2086,89 @@ footer {
   .footer-bottom .divider {
     margin: 0 25px; }
 
-  .review-page .review-form {
-    margin: 0; }
-    .review-page .review-form .caption {
-      font-size: 36px;
-      max-width: 300px; }
-    .review-page .review-form .form-group {
-      margin-bottom: 20px; }
-      .review-page .review-form .form-group input {
-        height: 35px;
-        padding: 8px 0; }
-        .review-page .review-form .form-group input::-webkit-input-placeholder {
-          font-size: 14px; }
-        .review-page .review-form .form-group input::-moz-placeholder {
-          font-size: 14px; }
-        .review-page .review-form .form-group input:-ms-input-placeholder {
-          font-size: 14px; }
-        .review-page .review-form .form-group input::-ms-input-placeholder {
-          font-size: 14px; }
-        .review-page .review-form .form-group input::placeholder {
-          font-size: 14px; }
-      .review-page .review-form .form-group label {
-        font-size: 14px;
-        margin-bottom: 8px; }
-      .review-page .review-form .form-group textarea {
-        min-height: 130px; }
-        .review-page .review-form .form-group textarea::-webkit-input-placeholder {
-          font-family: 'Merriweather-Regular', sans-serif;
-          font-size: 14px; }
-        .review-page .review-form .form-group textarea::-moz-placeholder {
-          font-family: 'Merriweather-Regular', sans-serif;
-          font-size: 14px; }
-        .review-page .review-form .form-group textarea:-ms-input-placeholder {
-          font-family: 'Merriweather-Regular', sans-serif;
-          font-size: 14px; }
-        .review-page .review-form .form-group textarea::-ms-input-placeholder {
-          font-family: 'Merriweather-Regular', sans-serif;
-          font-size: 14px; }
-        .review-page .review-form .form-group textarea::placeholder {
-          font-family: 'Merriweather-Regular', sans-serif;
-          font-size: 14px; }
-    .review-page .review-form .form-btn {
-      height: 50px;
-      font-size: 14px; }
+  .review-page {
+    min-height: auto;
+    padding-bottom: 120px; }
+    .review-page .review-form {
+      width: 90%;
+      margin: auto;
+      margin-top: 60px;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      min-height: auto; }
+      .review-page .review-form .caption {
+        font-size: 24px;
+        max-width: 275px; }
+      .review-page .review-form .form-group {
+        margin-bottom: 20px; }
+        .review-page .review-form .form-group input {
+          height: 20px;
+          padding: 4px 0; }
+          .review-page .review-form .form-group input::-webkit-input-placeholder {
+            font-size: 10px; }
+          .review-page .review-form .form-group input::-moz-placeholder {
+            font-size: 10px; }
+          .review-page .review-form .form-group input:-ms-input-placeholder {
+            font-size: 10px; }
+          .review-page .review-form .form-group input::-ms-input-placeholder {
+            font-size: 10px; }
+          .review-page .review-form .form-group input::placeholder {
+            font-size: 10px; }
+        .review-page .review-form .form-group label {
+          font-size: 10px;
+          margin-bottom: 8px; }
+        .review-page .review-form .form-group textarea {
+          min-height: 130px; }
+          .review-page .review-form .form-group textarea::-webkit-input-placeholder {
+            font-family: 'Merriweather-Regular', sans-serif;
+            font-size: 10px; }
+          .review-page .review-form .form-group textarea::-moz-placeholder {
+            font-family: 'Merriweather-Regular', sans-serif;
+            font-size: 10px; }
+          .review-page .review-form .form-group textarea:-ms-input-placeholder {
+            font-family: 'Merriweather-Regular', sans-serif;
+            font-size: 10px; }
+          .review-page .review-form .form-group textarea::-ms-input-placeholder {
+            font-family: 'Merriweather-Regular', sans-serif;
+            font-size: 10px; }
+          .review-page .review-form .form-group textarea::placeholder {
+            font-family: 'Merriweather-Regular', sans-serif;
+            font-size: 10px; }
+      .review-page .review-form .form-btn {
+        height: 40px;
+        font-size: 10px; }
 
   .modal-ok .content {
     padding: 40px;
-    min-height: 380px; } }
+    min-height: 320px;
+    width: 90%; }
+    .modal-ok .content .caption {
+      font-size: 20px; }
+
+  .pure-btn {
+    width: 130px;
+    height: 40px;
+    font-size: 10px; }
+
+  .contract .caption {
+    margin-top: 0;
+    font-size: 13px; }
+
+  .contract .contract-header {
+    margin-bottom: 80px;
+    font-size: 13px; }
+
+  .gallery-page .category, .gallery-page .name {
+    font-size: 20px;
+    margin-bottom: 10px; }
+
+  .gallery-page .photo-box .photo-item {
+    margin-bottom: 30px; }
+
+  .up-block {
+    padding: 12px 30px; }
+    .up-block a {
+      font-size: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

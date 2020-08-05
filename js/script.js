@@ -1,6 +1,11 @@
 $(document).ready(function () {
+
+    // const base_url = window.location.origin;
+
+    const base_url = "https://intelligent-mandarine-59881.herokuapp.com";
+
     
-    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/testimonials", function( data ) {
+    $.get( base_url + "/api/v0/testimonials", function( data ) {
         for (let i = 0; i < data.data.testimonials.length; i++) {
             $('.reviews-carousel').append(`
             <div class="reviews-carousel__item">
@@ -17,8 +22,13 @@ $(document).ready(function () {
         //reviews carousel
         var reviewSlidesCount = $('.reviews-carousel__item').length;
 
-        $('#items-review').text('/0' + reviewSlidesCount);
-        updateCurrentSlideNumber('item-review', 1);
+        if (reviewSlidesCount > 9) {
+            $('#items-review').text('/' + reviewSlidesCount);
+            updateCurrentSlideNumber('item-review', 1);
+        } else {
+            $('#items-review').text('/0' + reviewSlidesCount);
+            updateCurrentSlideNumber('item-review', 1);
+        }
 
         $('.reviews-carousel').owlCarousel({
             nav: false,
@@ -45,8 +55,7 @@ $(document).ready(function () {
 
     });
 
-    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/albums", function( data ) {
-        console.log(data.data.albums)
+    $.get(  base_url + "/api/v0/albums", function( data ) {
         var fourthClass = data.data.albums.filter(x => x.klass_number == 4);
 
         for (let i = 0; i < fourthClass.length; i++){
@@ -67,7 +76,7 @@ $(document).ready(function () {
                 </div>
                 <a href="#" class="gallery-btn">
                     Смотреть все фото
-                    <img src="img/link-arrow.png" alt="">
+                    <img src="img/arrow-right-black.svg" alt="">
                 </a>
              </div>
             `)
@@ -76,11 +85,23 @@ $(document).ready(function () {
         //gallery-carousel-4
         var gallerySlidesCount = $('#gallery-4 .gallery-carousel__item').length;
 
-        $('#items-gallery-4').text('/0' + gallerySlidesCount);
-        updateCurrentSlideNumber('item-gallery-4', 1);
 
-        $('.gallery-length-4').text('/0' + gallerySlidesCount);
-        updateCurrentSlideNumber('item-gallery-4', 1);
+        if (gallerySlidesCount > 9) {
+            $('#items-gallery-4').text('/' + gallerySlidesCount);
+            updateCurrentSlideNumber('item-gallery-4', 1);
+        } else {
+            $('#items-gallery-4').text('/0' + gallerySlidesCount);
+            updateCurrentSlideNumber('item-gallery-4', 1);
+        }
+
+        if (gallerySlidesCount > 9) {
+            $('.gallery-length-4').text('/' + gallerySlidesCount);
+            updateCurrentSlideNumber('item-gallery-4', 1);
+        } else {
+            $('.gallery-length-4').text('/0' + gallerySlidesCount);
+            updateCurrentSlideNumber('item-gallery-4', 1);
+        }
+
 
         $('#gallery-4').owlCarousel({
             nav:false,
@@ -112,7 +133,7 @@ $(document).ready(function () {
                 $(event.target).find(".owl-item").eq(current).find('.number-slide').text(current + 1);
                 $(event.target).find(".owl-item").eq(current + 1).find('.number-slide').text(current + 2);
                 $(event.target).find(".owl-item").eq(current + 2).find('.number-slide').text(current + 3);
-                updateCurrentSlideNumber('item-gallery-4', current <= itemsLastIndex ? current + 1 : current);
+                updateCurrentSlideNumber('item-gallery-4', event.item.index + 1);
             }
         });
 
@@ -126,8 +147,7 @@ $(document).ready(function () {
 
     });
 
-    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/albums", function( data ) {
-        console.log(data.data.albums)
+    $.get(  base_url + "/api/v0/albums", function( data ) {
         var ninthClass = data.data.albums.filter(x => x.klass_number == 9);
 
         for (let i = 0; i < ninthClass.length; i++){
@@ -148,7 +168,7 @@ $(document).ready(function () {
                 </div>
                 <a href="#" class="gallery-btn">
                     Смотреть все фото
-                    <img src="img/link-arrow.png" alt="">
+                    <img src="img/arrow-right-black.svg" alt="">
                 </a>
              </div>     
             `)
@@ -157,11 +177,22 @@ $(document).ready(function () {
         //gallery-carousel-9
         var gallerySlidesCount9 = $('#gallery-9 .gallery-carousel__item').length;
 
-        $('#items-gallery-9').text('/0' + gallerySlidesCount9);
-        updateCurrentSlideNumber('item-gallery-9', 1);
+        if (gallerySlidesCount9 > 9) {
+            $('#items-gallery-9').text('/' + gallerySlidesCount9);
+            updateCurrentSlideNumber('item-gallery-9', 1);
+        } else {
+            $('#items-gallery-9').text('/0' + gallerySlidesCount9);
+            updateCurrentSlideNumber('item-gallery-9', 1);
+        }
 
-        $('.gallery-length-9').text('/0' + gallerySlidesCount9);
-        updateCurrentSlideNumber('item-gallery-9', 1);
+        if (gallerySlidesCount9 > 9) {
+            $('.gallery-length-9').text('/0' + gallerySlidesCount9);
+            updateCurrentSlideNumber('item-gallery-9', 1);
+        } else {
+            $('.gallery-length-9').text('/' + gallerySlidesCount9);
+            updateCurrentSlideNumber('item-gallery-9', 1);
+        }
+
 
         $('#gallery-9').owlCarousel({
             nav:false,
@@ -207,8 +238,7 @@ $(document).ready(function () {
 
     });
 
-    $.get( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/albums", function( data ) {
-        console.log(data.data.albums)
+    $.get( base_url + "/api/v0/albums", function( data ) {
         var eleventhClass = data.data.albums.filter(x => x.klass_number == 11);
 
         for (let i = 0; i < eleventhClass.length; i++){
@@ -229,7 +259,7 @@ $(document).ready(function () {
                 </div>
                 <a href="#" class="gallery-btn">
                     Смотреть все фото
-                    <img src="img/link-arrow.png" alt="">
+                    <img src="img/arrow-right-black.svg" alt="">
                 </a>
               </div>
             `)
@@ -239,11 +269,22 @@ $(document).ready(function () {
         //gallery-carousel-11
         var gallerySlidesCount11 = $('#gallery-11 .gallery-carousel__item').length;
 
-        $('#items-gallery-11').text('/0' + gallerySlidesCount11);
-        updateCurrentSlideNumber('item-gallery-11', 1);
+        if (gallerySlidesCount11 > 9) {
+            $('#items-gallery-11').text('/' + gallerySlidesCount11);
+            updateCurrentSlideNumber('item-gallery-11', 1);
+        } else {
+            $('#items-gallery-11').text('/0' + gallerySlidesCount11);
+            updateCurrentSlideNumber('item-gallery-11', 1);
+        }
 
-        $('.gallery-length-11').text('/0' + gallerySlidesCount11);
-        updateCurrentSlideNumber('item-gallery-11', 1);
+        if (gallerySlidesCount11 > 9) {
+            $('.gallery-length-11').text('/' + gallerySlidesCount11);
+            updateCurrentSlideNumber('item-gallery-11', 1);
+        } else {
+            $('.gallery-length-11').text('/0' + gallerySlidesCount11);
+            updateCurrentSlideNumber('item-gallery-11', 1);
+        }
+
 
         $('#gallery-11').owlCarousel({
             nav:false,
@@ -292,10 +333,10 @@ $(document).ready(function () {
 
             event.preventDefault();
 
-            var sc = $(this).attr("href"),
-                dn = $(sc).offset().top;
+            var msc = $(this).attr("href"),
+                mdn = $(msc).offset().top;
 
-            $('html, body').animate({scrollTop: dn}, 1000);
+            $('html, body').animate({scrollTop: mdn}, 1000);
 
         });
     });
@@ -318,6 +359,16 @@ $(document).ready(function () {
 
     $('.close-button').on('click', function () {
         $('.sale-info-box').slideUp();
+        $('header').css('top', '0px');
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 10){
+                $('.sale-info-box').css('transform', 'translateY(-100%)');
+                $('header').css('top', '0')
+            } else {
+                $('.sale-info-box').css('transform', 'translateY(0)');
+                $('header').css('top', '0px')
+            }
+        }).trigger('scroll');
         return false;
     });
 
@@ -330,12 +381,12 @@ $(document).ready(function () {
 
     $('.cases').owlCarousel({
         nav:true,
-        navText : ["<img src=\"img/arrow-left-black.png\" alt=\"\" id=\"portfolio-btn-prev\">", "<img src=\"img/arrow-right-black.png\" alt=\"\" id=\"portfolio-btn-next\">"],
+        navText : ["<img src=\"img/arrow-right-black.svg\" alt=\"\" id=\"portfolio-btn-prev\">", "<img src=\"img/arrow-right-black.svg\" alt=\"\" id=\"portfolio-btn-next\">"],
         responsiveClass:true,
         responsive:{
             0:{
                 items: 1,
-                navText : ["<img src=\"img/arrow-left-black.png\" alt=\"\" id=\"portfolio-btn-prev\">", "<img src=\"img/arrow-right-black.png\" alt=\"\" id=\"portfolio-btn-next\">"],
+                navText : ["<img src=\"img/arrow-right-black.svg\" alt=\"\" id=\"portfolio-btn-prev\">", "<img src=\"img/arrow-right-black.svg\" alt=\"\" id=\"portfolio-btn-next\">"],
             },
             765:{
                 items: 1,
@@ -353,6 +404,17 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $(this).parent().parent().find('.collapse-box').toggleClass('show');
     })
+
+
+    //smooth scroll to anchor
+
+    $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+
+        var sc = $(this).attr("href"),
+            dn = $(sc).offset().top;
+        $('html, body').animate({scrollTop: dn}, 1000);
+    });
 
 
     //tabs
@@ -417,7 +479,7 @@ $(document).ready(function () {
     //form reviews
     $('#review-form').on('submit', function (e) {
         e.preventDefault();
-        $.post( "https://intelligent-mandarine-59881.herokuapp.com/api/v0/testimonials", {
+        $.post( base_url + "api/v0/testimonials", {
             name: $('#form-name').val(),
             body: $('#review-text').val()
         } )
