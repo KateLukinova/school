@@ -479,7 +479,7 @@ $(document).ready(function () {
     //form reviews
     $('#review-form').on('submit', function (e) {
         e.preventDefault();
-        $.post( base_url + "api/v0/testimonials", {
+        $.post( base_url + "/api/v0/testimonials", {
             name: $('#form-name').val(),
             body: $('#review-text').val()
         } )

@@ -357,7 +357,7 @@ header {
       -ms-flex-align: center;
       align-items: center; }
       .cases .owl-nav button img {
-        width: 24px; }
+        width: 16px; }
     .cases .owl-nav button:focus, .cases .owl-nav button:hover {
       outline: none;
       -webkit-box-shadow: none;
@@ -1227,7 +1227,7 @@ footer {
       max-width: 540px; }
   .review-page .media {
     position: absolute;
-    bottom: 50px;
+    bottom: 117px;
     left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
