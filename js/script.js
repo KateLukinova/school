@@ -65,9 +65,9 @@ $(document).ready(function () {
                     <div class="number-slide gallery-item-number"></div>
                     <div class="current-items gallery-length-4"></div>
                 </div>
-                <div class="gallery-carousel-img">
+                <a href="gallery.html?albumId=${fourthClass[i].id}" class="gallery-carousel-img">
                     <img src="https://bookinfocus.d1ma-angel.com/${fourthClass[i].cover.url}" alt="">
-                </div>
+                </a>
                 <div class="gallery-item__info">
                     <p class="class">${fourthClass[i].title}</p>
                     <p class="book-type">
@@ -156,9 +156,9 @@ $(document).ready(function () {
                     <div class="number-slide gallery-item-number"></div>
                     <div class="current-items gallery-length-9"></div>
                 </div>
-                <div class="gallery-carousel-img">
+                <a href="gallery.html?albumId=${ninthClass[i].id}" class="gallery-carousel-img">
                     <img src="https://bookinfocus.d1ma-angel.com/${ninthClass[i].cover.url}" alt="">
-                </div>
+                </a>
                 <div class="gallery-item__info">
                     <p class="class">${ninthClass[i].title}</p>
                     <p class="book-type">
@@ -248,9 +248,9 @@ $(document).ready(function () {
                     <div class="number-slide gallery-item-number"></div>
                     <div class="current-items gallery-length-11"></div>
                 </div>
-                <div class="gallery-carousel-img">
+                <a href="gallery.html?albumId=${eleventhClass[i].id}" class="gallery-carousel-img">
                     <img src="https://bookinfocus.d1ma-angel.com/${eleventhClass[i].cover.url}" alt="">
-                </div>
+                </a>
                 <div class="gallery-item__info">
                     <p class="class">${eleventhClass[i].title}</p>
                     <p class="book-type">
