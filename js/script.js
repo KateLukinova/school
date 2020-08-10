@@ -74,7 +74,7 @@ $(document).ready(function () {
                         Книга: <span>${fourthClass[i].book_type}</span>
                     </p>
                 </div>
-                <a href="#" class="gallery-btn">
+                <a href="gallery.html?albumId=${fourthClass[i].id}" class="gallery-btn">
                     Смотреть все фото
                     <img src="img/arrow-right-black.svg" alt="">
                 </a>
@@ -149,7 +149,6 @@ $(document).ready(function () {
 
     $.get(  base_url + "/api/v0/albums", function( data ) {
         var ninthClass = data.data.albums.filter(x => x.klass_number == 9);
-
         for (let i = 0; i < ninthClass.length; i++){
             $('#gallery-9').append(`
              <div class="gallery-carousel__item">
@@ -166,7 +165,7 @@ $(document).ready(function () {
                         Книга: <span>${ninthClass[i].book_type}</span>
                     </p>
                 </div>
-                <a href="#" class="gallery-btn">
+                <a href="gallery.html?albumId=${ninthClass[i].id}" class="gallery-btn">
                     Смотреть все фото
                     <img src="img/arrow-right-black.svg" alt="">
                 </a>
@@ -240,6 +239,7 @@ $(document).ready(function () {
 
     $.get( base_url + "/api/v0/albums", function( data ) {
         var eleventhClass = data.data.albums.filter(x => x.klass_number == 11);
+        console.log(eleventhClass)
 
         for (let i = 0; i < eleventhClass.length; i++){
             $('#gallery-11').append(`
@@ -257,7 +257,7 @@ $(document).ready(function () {
                         Книга: <span>${eleventhClass[i].book_type}</span>
                     </p>
                 </div>
-                <a href="#" class="gallery-btn">
+                <a href="gallery.html?albumId=${eleventhClass[i].id}" class="gallery-btn">
                     Смотреть все фото
                     <img src="img/arrow-right-black.svg" alt="">
                 </a>
@@ -324,6 +324,29 @@ $(document).ready(function () {
         $('#prev-slide-gallery-11').on('click', function(){
             $('#gallery-11').trigger('prev.owl.carousel');
         });
+    });
+
+    var url = new URL(window.location.href);
+    var albumId = url.searchParams.get("albumId");
+    console.log(albumId)
+    $.get(  base_url + "/api/v0/albums/" + albumId, function( data ) {
+        console.log(data.data)
+
+        var photos = data.data.album.photos;
+        for (let i = 0; i < photos.length; i++){
+            var photoItem = `
+            <div class="photo-item">
+                <img src="${base_url}${photos[i].image.url}" alt="">
+            </div>
+            `;
+
+            $('.photo-box').append(photoItem);
+        }
+
+        $('#category').text(data.data.album.title);
+
+        $('#category-services').text(data.data.album.book_type)
+
     });
 
 
