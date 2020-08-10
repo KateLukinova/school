@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // const base_url = window.location.origin;
 
-    const base_url = "https://intelligent-mandarine-59881.herokuapp.com";
+    const base_url = "https://bookinfocus.d1ma-angel.com";
 
     
     $.get( base_url + "/api/v0/testimonials", function( data ) {
@@ -66,7 +66,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-4"></div>
                 </div>
                 <div class="gallery-carousel-img">
-                    <img src="https://intelligent-mandarine-59881.herokuapp.com/${fourthClass[i].cover.url}" alt="">
+                    <img src="https://bookinfocus.d1ma-angel.com/${fourthClass[i].cover.url}" alt="">
                 </div>
                 <div class="gallery-item__info">
                     <p class="class">${fourthClass[i].title}</p>
@@ -158,7 +158,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-9"></div>
                 </div>
                 <div class="gallery-carousel-img">
-                    <img src="https://intelligent-mandarine-59881.herokuapp.com/${ninthClass[i].cover.url}" alt="">
+                    <img src="https://bookinfocus.d1ma-angel.com/${ninthClass[i].cover.url}" alt="">
                 </div>
                 <div class="gallery-item__info">
                     <p class="class">${ninthClass[i].title}</p>
@@ -249,7 +249,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-11"></div>
                 </div>
                 <div class="gallery-carousel-img">
-                    <img src="https://intelligent-mandarine-59881.herokuapp.com/${eleventhClass[i].cover.url}" alt="">
+                    <img src="https://bookinfocus.d1ma-angel.com/${eleventhClass[i].cover.url}" alt="">
                 </div>
                 <div class="gallery-item__info">
                     <p class="class">${eleventhClass[i].title}</p>
