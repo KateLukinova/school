@@ -1,10 +1,7 @@
 $(document).ready(function () {
 
-    // const base_url = window.location.origin;
+    const base_url = window.location.origin;
 
-    const base_url = "https://bookinfocus.d1ma-angel.com";
-
-    
     $.get( base_url + "/api/v0/testimonials", function( data ) {
         for (let i = 0; i < data.data.testimonials.length; i++) {
             $('.reviews-carousel').append(`
@@ -66,7 +63,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-4"></div>
                 </div>
                 <a href="gallery.html?albumId=${fourthClass[i].id}" class="gallery-carousel-img">
-                    <img src="https://bookinfocus.d1ma-angel.com/${fourthClass[i].cover.url}" alt="">
+                    <img src="${base_url}/${fourthClass[i].cover.url}" alt="">
                 </a>
                 <div class="gallery-item__info">
                     <p class="class">${fourthClass[i].title}</p>
@@ -157,7 +154,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-9"></div>
                 </div>
                 <a href="gallery.html?albumId=${ninthClass[i].id}" class="gallery-carousel-img">
-                    <img src="https://bookinfocus.d1ma-angel.com/${ninthClass[i].cover.url}" alt="">
+                    <img src="${base_url}/${ninthClass[i].cover.url}" alt="">
                 </a>
                 <div class="gallery-item__info">
                     <p class="class">${ninthClass[i].title}</p>
@@ -169,7 +166,7 @@ $(document).ready(function () {
                     Смотреть все фото
                     <img src="img/arrow-right-black.svg" alt="">
                 </a>
-             </div>     
+             </div>
             `)
         }
 
@@ -239,7 +236,6 @@ $(document).ready(function () {
 
     $.get( base_url + "/api/v0/albums", function( data ) {
         var eleventhClass = data.data.albums.filter(x => x.klass_number == 11);
-        console.log(eleventhClass)
 
         for (let i = 0; i < eleventhClass.length; i++){
             $('#gallery-11').append(`
@@ -249,7 +245,7 @@ $(document).ready(function () {
                     <div class="current-items gallery-length-11"></div>
                 </div>
                 <a href="gallery.html?albumId=${eleventhClass[i].id}" class="gallery-carousel-img">
-                    <img src="https://bookinfocus.d1ma-angel.com/${eleventhClass[i].cover.url}" alt="">
+                    <img src="${base_url}/${eleventhClass[i].cover.url}" alt="">
                 </a>
                 <div class="gallery-item__info">
                     <p class="class">${eleventhClass[i].title}</p>
@@ -328,26 +324,26 @@ $(document).ready(function () {
 
     var url = new URL(window.location.href);
     var albumId = url.searchParams.get("albumId");
-    console.log(albumId)
-    $.get(  base_url + "/api/v0/albums/" + albumId, function( data ) {
-        console.log(data.data)
 
-        var photos = data.data.album.photos;
-        for (let i = 0; i < photos.length; i++){
-            var photoItem = `
-            <div class="photo-item">
-                <img src="${base_url}${photos[i].image.url}" alt="">
-            </div>
-            `;
+    if (albumId) {
+        $.get(  base_url + "/api/v0/albums/" + albumId, function( data ) {
+            var photos = data.data.album.photos;
+            for (let i = 0; i < photos.length; i++){
+                var photoItem = `
+                <div class="photo-item">
+                    <img src="${base_url}${photos[i].image.url}" alt="">
+                </div>
+                `;
 
-            $('.photo-box').append(photoItem);
-        }
+                $('.photo-box').append(photoItem);
+            }
 
-        $('#category').text(data.data.album.title);
+            $('#category').text(data.data.album.title);
 
-        $('#category-services').text(data.data.album.book_type)
+            $('#category-services').text(data.data.album.book_type)
 
-    });
+        });
+    }
 
 
     $(window).scroll(function () {
