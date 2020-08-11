@@ -1698,7 +1698,7 @@ footer {
     width: 55%; }
 
   .top-section {
-    margin-top: 80px; } }
+    margin-top: 88px; } }
 @media (max-width: 768px) {
   .cases {
     padding-bottom: 60px;
@@ -1950,7 +1950,7 @@ footer {
 
   .carousel-box .number-carousel-box {
     font-size: 14px;
-    right: 55px; }
+    right: 50px; }
 
   .p-mobile {
     margin-top: 35px; }
@@ -2081,7 +2081,8 @@ footer {
     padding-bottom: 5px; }
 
   .instagram-gallery-caption-mobile {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-size: 12px; }
 
   .footer-bottom .divider {
     margin: 0 25px; }
